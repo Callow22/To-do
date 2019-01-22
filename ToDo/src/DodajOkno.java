@@ -8,7 +8,6 @@ public class DodajOkno extends JFrame {
     private JPanel DodajPanel;
     private JTextField textField_id;
     private JTextField textField_nazwa;
-//    private JTextField textField_cena;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -39,11 +38,6 @@ public class DodajOkno extends JFrame {
         lblNazwaZadania.setBounds(51, 58, 125, 27);
         DodajPanel.add(lblNazwaZadania);
 
- /*       JLabel lblCenaUsugi = new JLabel("Data:");
-        lblCenaUsugi.setFont(new Font("Tahoma", Font.BOLD, 16));
-        lblCenaUsugi.setBounds(51, 90, 125, 27);
-        DodajPanel.add(lblCenaUsugi);
-*/
         textField_id = new JTextField();
         textField_id.setBounds(176, 30, 177, 22);
         textField_id.setEditable(false);
@@ -55,11 +49,6 @@ public class DodajOkno extends JFrame {
         textField_nazwa.setBounds(176, 63, 177, 22);
         DodajPanel.add(textField_nazwa);
 
- /*       textField_cena = new JTextField();
-        textField_cena.setColumns(10);
-        textField_cena.setBounds(176, 95, 177, 22);
-        DodajPanel.add(textField_cena);
-*/
         JButton btnDodaj = new JButton("Dodaj");
         btnDodaj.setBounds(176, 128, 177, 23);
         DodajPanel.add(btnDodaj);
@@ -89,37 +78,15 @@ public class DodajOkno extends JFrame {
             @Override
             public void mousePressed(MouseEvent arg0) {
 
- /*               try
-                {
-                    Double.parseDouble(textField_cena.getText());
-                }
-                catch(NumberFormatException e)
-                {
-                    Error frame2 = new Error("Wprowadzono nieprawidłową wartość w polu 'Data'");
-                    frame2.setVisible(true);
-                    return;
-                }
-                double cena = Double.parseDouble(textField_cena.getText());
-*/
-                //ZadanieFactory zadanieFactory = new ZadanieFactory();
+
                 String nazwa = textField_nazwa.getText();
                 if(nazwa.isBlank()) {
                    // System.out.println("Failed");
                     Error frame3= new Error("Nieprawidłowa nazwa zadania");
                     frame3.setVisible(true);
                     return;
-                  // ZadanieInterface zadanie = zadanieFactory.getType(true, null, 0, null);
-                   // instance.dodajDoListy(zadanie);
                 }
-  /*              else {
-                    String kategoria = kategorie[comboBox.getSelectedIndex()];
 
-                    ZadanieInterface usluga = zadanieFactory.getType(false, nazwa, kategoria);
-
-
-                    textField_cena.setText("");
-                    textField_id.setText(String.valueOf(instance.getInstance().size()));
-                }*/
                 String kategoria = kategorie[comboBox.getSelectedIndex()];
                 ZadanieInterface zadania= new Zadanie(nazwa, kategoria);
                 instance.dodajDoListy(zadania);

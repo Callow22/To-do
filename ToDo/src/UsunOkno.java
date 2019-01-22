@@ -59,12 +59,6 @@ public class UsunOkno extends JFrame{
         textField_nazwa.setBounds(126, 66, 186, 20);
         contentPane.add(textField_nazwa);
 
-        /*textField_cena = new JTextField();
-        textField_cena.setEditable(false);
-        textField_cena.setColumns(10);
-        textField_cena.setBounds(126, 96, 186, 20);
-        contentPane.add(textField_cena);*/
-
         JLabel lblId = new JLabel("ID");
         lblId.setFont(new Font("Tahoma", Font.BOLD, 14));
         lblId.setBounds(47, 42, 46, 14);
@@ -75,18 +69,12 @@ public class UsunOkno extends JFrame{
         lblNazwa.setBounds(47, 69, 46, 14);
         contentPane.add(lblNazwa);
 
-       /* JLabel lblCena = new JLabel("Cena");
-        lblCena.setFont(new Font("Tahoma", Font.BOLD, 14));
-        lblCena.setBounds(47, 99, 46, 14);
-        contentPane.add(lblCena);*/
-
 
         JButton btnUsun = new JButton("Usuń");
         btnUsun.setBounds(150, 161, 89, 23);
         contentPane.add(btnUsun);
 
         textField_id.setText(String.valueOf(instance.czytajListe().get(0).getID()));
-        //textField_cena.setText(String.valueOf(instance.czytajListe().get(0).getCena()));
         textField_nazwa.setText(instance.czytajListe().get(0).getNazwa());
 
         JLabel Kategoria = new JLabel("Kategoria");
@@ -110,11 +98,9 @@ public class UsunOkno extends JFrame{
                 JComboBox<String> combo = (JComboBox<String>) event.getSource();
                 int selectedIndex = combo.getSelectedIndex();
 
-               // textField_cena.setEditable(false);
                 textField_nazwa.setEditable(false);
 
                 textField_id.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getID()));
-               // textField_cena.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getCena()));
                 textField_nazwa.setText(instance.czytajListe().get(selectedIndex).getNazwa());
                 textField_Kategoria.setText(instance.czytajListe().get(selectedIndex).getKategoria());
 
@@ -135,7 +121,6 @@ public class UsunOkno extends JFrame{
             public void actionPerformed(ActionEvent event) {
 
                 String nazwa = textField_nazwa.getText();
-              //  double cena = Double.parseDouble(textField_cena.getText());
 
                 instance.usunZListy(instance.czytajListe().get(comboBox.getSelectedIndex()).getID());
                 Error frame1 = new Error("Usunięto zadanie!");
