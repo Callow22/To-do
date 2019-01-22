@@ -1,21 +1,16 @@
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
-
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JButton;
-
 import javax.swing.SwingConstants;
-
-
-
 import java.awt.FlowLayout;
 
 
 public class GUI {
 
-    public JFrame frmZarzadzanieZakupami;
+    public JFrame frmZarzadzanieZadaniami;
 
 
 
@@ -24,14 +19,14 @@ public class GUI {
     }
 
     private void initialize() {
-        frmZarzadzanieZakupami = new JFrame();
-        frmZarzadzanieZakupami.setTitle("Zarz\u0105dzanie Zakupami");
-        frmZarzadzanieZakupami.setBounds(100, 100, 583, 300);
-        frmZarzadzanieZakupami.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frmZarzadzanieZakupami.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        frmZarzadzanieZadaniami = new JFrame();
+        frmZarzadzanieZadaniami.setTitle("Zarządzanie Zadniami");
+        frmZarzadzanieZadaniami.setBounds(100, 100, 583, 300);
+        frmZarzadzanieZadaniami.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frmZarzadzanieZadaniami.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
 
-        JButton btnNewButton = new JButton("Dodaj Produkt");
+        JButton btnNewButton = new JButton("Dodaj");
         btnNewButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent arg0) {
@@ -40,10 +35,10 @@ public class GUI {
             }
         });
         btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
-        frmZarzadzanieZakupami.getContentPane().add(btnNewButton);
+        frmZarzadzanieZadaniami.getContentPane().add(btnNewButton);
 
 
-        JButton btnPrzegldaj = new JButton("Przegl\u0105daj Zakupy");
+        JButton btnPrzegldaj = new JButton("Wyświetl");
         btnPrzegldaj.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent arg0) {
@@ -51,10 +46,27 @@ public class GUI {
                 frame1.setVisible(true);
             }
         });
-        frmZarzadzanieZakupami.getContentPane().add(btnPrzegldaj);
+        frmZarzadzanieZadaniami.getContentPane().add(btnPrzegldaj);
 
-        JButton btnStatystyki = new JButton("Statystyki");
-        frmZarzadzanieZakupami.getContentPane().add(btnStatystyki);
+        JButton btnUsun = new JButton("Usuń");
+        btnUsun.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent arg0) {
+                UsunOkno frame1 = new UsunOkno();
+                frame1.setVisible(true);
+            }
+        });
+        frmZarzadzanieZadaniami.getContentPane().add(btnUsun);
+
+        JButton btnWyjdz= new JButton("Wyjdź");
+        btnWyjdz.addMouseListener(new MouseAdapter() {
+            @Override
+                    public void mousePressed(MouseEvent arg0){
+            System.exit(0);}
+        });
+        frmZarzadzanieZadaniami.getContentPane().add(btnWyjdz);
+
+
     }
 
 

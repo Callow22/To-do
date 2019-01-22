@@ -4,19 +4,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Przegladaj extends JFrame{
+public class UsunOkno extends JFrame{
     private JPanel contentPane;
     private JTextField txtDodanoNowyP;
     private JTextField textField_id;
     private JTextField textField_nazwa;
-   // private JTextField textField_cena;
+    private JTextField textField_cena;
     private JTextField textField_Kategoria;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Przegladaj frame = new Przegladaj();
+                    UsunOkno frame = new UsunOkno();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -25,7 +25,7 @@ public class Przegladaj extends JFrame{
         });
     }
 
-    public Przegladaj() {
+    public UsunOkno() {
         setBounds(100, 100, 393, 233);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -59,12 +59,12 @@ public class Przegladaj extends JFrame{
         textField_nazwa.setBounds(126, 66, 186, 20);
         contentPane.add(textField_nazwa);
 
-    /*    textField_cena = new JTextField();
+        /*textField_cena = new JTextField();
         textField_cena.setEditable(false);
         textField_cena.setColumns(10);
         textField_cena.setBounds(126, 96, 186, 20);
-        contentPane.add(textField_cena);
-*/
+        contentPane.add(textField_cena);*/
+
         JLabel lblId = new JLabel("ID");
         lblId.setFont(new Font("Tahoma", Font.BOLD, 14));
         lblId.setBounds(47, 42, 46, 14);
@@ -75,18 +75,18 @@ public class Przegladaj extends JFrame{
         lblNazwa.setBounds(47, 69, 46, 14);
         contentPane.add(lblNazwa);
 
-      /*  JLabel lblCena = new JLabel("Cena");
+       /* JLabel lblCena = new JLabel("Cena");
         lblCena.setFont(new Font("Tahoma", Font.BOLD, 14));
         lblCena.setBounds(47, 99, 46, 14);
         contentPane.add(lblCena);*/
 
 
-       // JButton btnUsun = new JButton("Usuń");
-       // btnUsun.setBounds(323, 161, 89, 23);
-       // contentPane.add(btnUsun);
+        JButton btnUsun = new JButton("Usuń");
+        btnUsun.setBounds(150, 161, 89, 23);
+        contentPane.add(btnUsun);
 
         textField_id.setText(String.valueOf(instance.czytajListe().get(0).getID()));
-       // textField_cena.setText(String.valueOf(instance.czytajListe().get(0).getCena()));
+        //textField_cena.setText(String.valueOf(instance.czytajListe().get(0).getCena()));
         textField_nazwa.setText(instance.czytajListe().get(0).getNazwa());
 
         JLabel Kategoria = new JLabel("Kategoria");
@@ -97,7 +97,7 @@ public class Przegladaj extends JFrame{
         textField_Kategoria = new JTextField();
         textField_Kategoria.setEditable(false);
         textField_Kategoria.setColumns(10);
-        textField_Kategoria.setBounds(126, 99, 186, 20);
+        textField_Kategoria.setBounds(126, 96, 186, 20);
         contentPane.add(textField_Kategoria);
 
 
@@ -128,14 +128,14 @@ public class Przegladaj extends JFrame{
 
         });
 
-/*
+
         btnUsun.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent event) {
 
                 String nazwa = textField_nazwa.getText();
-                double cena = Double.parseDouble(textField_cena.getText());
+              //  double cena = Double.parseDouble(textField_cena.getText());
 
                 instance.usunZListy(instance.czytajListe().get(comboBox.getSelectedIndex()).getID());
 
@@ -143,6 +143,6 @@ public class Przegladaj extends JFrame{
             }
         });
 
-*/
+
     }
 }

@@ -6,7 +6,7 @@ public class Main {
             public void run() {
                 try {
                     GUI window = new GUI();
-                    window.frmZarzadzanieZakupami.setVisible(true);
+                    window.frmZarzadzanieZadaniami.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
