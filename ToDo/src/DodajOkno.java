@@ -29,12 +29,12 @@ public class DodajOkno extends JFrame {
         DodajPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(DodajPanel);
         DodajPanel.setLayout(null);
-        JLabel lblIdZadania = new JLabel("ID Zadania:");
+        JLabel lblIdZadania = new JLabel("ID:");
         lblIdZadania.setFont(new Font("Tahoma", Font.BOLD, 16));
         lblIdZadania.setBounds(51, 25, 125, 27);
         DodajPanel.add(lblIdZadania);
 
-        JLabel lblNazwaZadania = new JLabel("Nazwa Zadania:");
+        JLabel lblNazwaZadania = new JLabel("Nazwa:");
         lblNazwaZadania.setFont(new Font("Tahoma", Font.BOLD, 16));
         lblNazwaZadania.setBounds(51, 58, 125, 27);
         DodajPanel.add(lblNazwaZadania);
@@ -125,7 +125,7 @@ public class DodajOkno extends JFrame {
                 instance.dodajDoListy(zadania);
                 textField_id.setText(String.valueOf(zadania.getID()));
                 textField_nazwa.setText("");
-                Dodano frame1 = new Dodano();
+                Error frame1 = new Error("Dodano nowe zadanie!");
                 frame1.setVisible(true);
 
             }

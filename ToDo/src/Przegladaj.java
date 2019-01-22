@@ -72,7 +72,7 @@ public class Przegladaj extends JFrame{
 
         JLabel lblNazwa = new JLabel("Nazwa");
         lblNazwa.setFont(new Font("Tahoma", Font.BOLD, 14));
-        lblNazwa.setBounds(47, 69, 46, 14);
+        lblNazwa.setBounds(47, 69, 100, 16);
         contentPane.add(lblNazwa);
 
       /*  JLabel lblCena = new JLabel("Cena");
@@ -91,7 +91,7 @@ public class Przegladaj extends JFrame{
 
         JLabel Kategoria = new JLabel("Kategoria");
         Kategoria.setFont(new Font("Tahoma", Font.BOLD, 14));
-        Kategoria.setBounds(47, 99, 46, 14);
+        Kategoria.setBounds(47, 99, 100, 16);
         contentPane.add(Kategoria);
 
         textField_Kategoria = new JTextField();

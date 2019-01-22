@@ -138,6 +138,8 @@ public class UsunOkno extends JFrame{
               //  double cena = Double.parseDouble(textField_cena.getText());
 
                 instance.usunZListy(instance.czytajListe().get(comboBox.getSelectedIndex()).getID());
+                Error frame1 = new Error("Usunięto zadanie!");
+                frame1.setVisible(true);
 
 
             }

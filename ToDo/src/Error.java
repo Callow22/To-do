@@ -12,7 +12,7 @@ public class Error extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Dodano frame = new Dodano();
+                    Error frame = new Error("");
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
